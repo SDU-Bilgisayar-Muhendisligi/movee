@@ -1,7 +1,6 @@
 <template>
     <base-card height-v-h="h-screen" padding-size="lg:py-8 pb-36" >
         <div class="new-password h-full">
-            <hisbe-logo class="hidden lg:flex"/>
             <custom-geri-tusu class="self-start !top-10 !left-5"/>
             <p class="new-password-forgot-password">Yeni Şifre Oluştur</p>
             <p class="new-password-incentive">Hatırladınız mı?
@@ -23,8 +22,6 @@ import BaseCard from "~/components/cards/BaseCard.vue";
 import CustomForm from "~/components/base/CustomFormInput.vue";
 import CustomButton from "~/components/base/CustomButton.vue";
 import CustomGeriTusu from "~/components/base/CustomGeriTusu.vue";
-import HisbeLogo from "~/components/common/HisbeLogo.vue";
-import BackgrounImage from "~/components/common/BackgrounImage.vue";
 
 definePageMeta({
     layout: "temiz"

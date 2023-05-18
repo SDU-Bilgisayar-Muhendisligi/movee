@@ -4,7 +4,7 @@
             <custom-progress-bar-hisbe class="circle-progress__svg" :voteHisbe="merakEdilen.voteHisbe"
                                        :max="merakEdilen.max"/>
             <div class="custom-vote-hisbe-detay">
-                <p class="custom-vote-hisbe-detay-title">Hisbe:</p>
+                <p class="custom-vote-hisbe-detay-title">Movee:</p>
                 <p class="custom-vote-hisbe-detay-status">{{ merakEdilen.hisbe }}</p>
             </div>
         </div>

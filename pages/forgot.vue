@@ -1,7 +1,7 @@
 <template>
     <base-card height-v-h="h-screen" padding-size="py-8 pb-40">
         <div class="forgot">
-            <hisbe-logo class="hidden lg:flex"/>
+          <img src="/mobile-movee.png"  alt="">
             <custom-geri-tusu class="self-start !top-10 !left-5"/>
             <p class="forgot-text">Şifremi unuttum</p>
             <p class="login-incentive hidden lg:flex">Hatırladınız mı?
@@ -25,8 +25,6 @@ import BaseCard from "~/components/cards/BaseCard.vue";
 import CustomForm from "~/components/base/CustomFormInput.vue";
 import CustomButton from "~/components/base/CustomButton.vue";
 import CustomGeriTusu from "~/components/base/CustomGeriTusu.vue";
-import HisbeLogo from "~/components/common/HisbeLogo.vue";
-import BackgrounImage from "~/components/common/BackgrounImage.vue";
 
 definePageMeta({
     layout: "temiz"
@@ -51,6 +49,11 @@ definePageMeta({
     @apply
     text-gray-yediyuz
     font-semibold text-xl lg:mt-8
+}
+
+img{
+  @apply
+  w-[150px] hidden lg:flex
 }
 
 .signup-soru {

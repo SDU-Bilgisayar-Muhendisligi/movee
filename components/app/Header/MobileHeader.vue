@@ -2,7 +2,7 @@
   <header class="header">
     <container class="header-container">
       <nuxt-link to="/" class="w-1/5">
-        <Hisbe class="hidden lg:flex"/>
+        <img src="/movee.png" class="hidden lg:flex"  alt="">
       </nuxt-link>
       <div class="header-container-searchbar">
         <search @click="focus" class="header-container-searchbar-search-icon"/>
@@ -85,6 +85,11 @@ const ignore = () => {
 .header-container-searchbar-search-icon {
   @apply
   text-gray-dark
+}
+
+img{
+  @apply
+  w-[100px]
 }
 
 .header-container-searchbar-input {
