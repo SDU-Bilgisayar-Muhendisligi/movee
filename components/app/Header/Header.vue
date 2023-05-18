@@ -2,6 +2,7 @@
   <header class="header">
     <container class="header-container">
       <nuxt-link to="/" class="w-1/5">
+        <img src="/movee.png" class="hidden lg:flex"  alt="">
       </nuxt-link>
       <div class="header-container-searchbar" >
         <search @click="focus" class="header-container-searchbar-search-icon"/>
@@ -70,6 +71,11 @@ const ignore = () => {
   pt-6 lg:py-6 flex
   bg-white sticky top-0 z-40
   lg:border-b border-gray-ikiyuz
+}
+
+ img{
+  @apply
+  w-[100px]
 }
 
 .header-container {
