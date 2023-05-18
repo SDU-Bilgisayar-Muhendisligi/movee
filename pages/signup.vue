@@ -1,7 +1,7 @@
 <template>
     <base-card flex-type="middle-row">
         <div class="signup">
-            <HisbeLogo/>
+          <img src="/mobile-movee.png" alt="">
             <p class="signup-kaydol">Kaydol</p>
             <p class="signup-soru">Zaten üye misiniz?
                 <nuxt-link to="/login" class="text-primary"> Giriş yapın</nuxt-link>
@@ -16,12 +16,9 @@
 </template>
 
 <script setup>
-import HisbeLogo from "~/components/common/HisbeLogo.vue"
 import BaseCard from "~/components/cards/BaseCard.vue";
 import CustomForm from "~/components/base/CustomFormInput.vue";
 import CustomButton from "~/components/base/CustomButton.vue";
-import BackgrounImage from "~/components/common/BackgrounImage.vue";
-
 definePageMeta({
     layout: "temiz"
 })
@@ -49,7 +46,10 @@ definePageMeta({
     @apply
     w-full lg:w-10/12
 }
-
+img{
+  @apply
+  w-[150px]
+}
 .signup-custom-button {
     @apply
     w-full lg:w-10/12 mt-6

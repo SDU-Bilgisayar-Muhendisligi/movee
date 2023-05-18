@@ -17,7 +17,7 @@ import MobileFooter from "~/components/app/MobileFooter.vue";
 import MobileHeader from "~/components/app/Header/MobileHeader.vue";
 import BackgrounImage from "~/components/common/BackgrounImage.vue";
 useHead({
-  title: 'Hisbe',
+  title: 'Movee',
 })
 </script>
 

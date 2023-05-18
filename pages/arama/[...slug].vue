@@ -3,10 +3,10 @@
     <div v-show="route.path == `/arama/${slug}`" class="flex p-4 lg:pt-0">
       <p>{{slugString}} araması için 16 sonuç bulundu</p>
     </div>
-    <p class="text-gray-yediyuz font-semibold text-sm my-4">Başlıklar (2)</p>
+    <p class="text-gray-yediyuz font-semibold text-sm my-4 ml-4">Başlıklar (2)</p>
     <arama-baslik/>
     <div class="px-3 lg:px-0">
-      <p class="text-gray-yediyuz font-semibold text-sm mt-6">İçerikler (14)</p>
+      <p class="text-gray-yediyuz font-semibold text-sm mt-6 ml-4">İçerikler (14)</p>
       <arama-icerik/>
     </div>
   </div>

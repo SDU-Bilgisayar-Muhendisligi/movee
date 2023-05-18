@@ -3,7 +3,7 @@
         <div class="custom-vote-hisbe">
             <custom-progress-bar-hisbe class="circle-progress__svg" :voteHisbe="cevaplanan.voteHisbe" :max="cevaplanan.max"/>
             <div class="custom-vote-hisbe-detay">
-                <p class="custom-vote-hisbe-detay-title">Hisbe:</p>
+                <p class="custom-vote-hisbe-detay-title">Movee:</p>
                 <p class="custom-vote-hisbe-detay-status">{{cevaplanan.hisbe}}</p>
             </div>
         </div>

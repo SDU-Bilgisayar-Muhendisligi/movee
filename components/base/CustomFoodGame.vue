@@ -16,12 +16,12 @@
             <Play class="play text-white"/>
         </div>
         <p class="custom-food-game-container-expression-two">{{ cevaplanan.anlatimİki }}</p>
-        <p class="custom-food-game-container-item">Kaynaklarda şöyle sesler var:</p>
-        <div class="custom-food-game-container-sound">
-            <Play id="play-icon" class="text-primary"/>
-            <audio controls controlsList="noplaybackrate" type="audio/mp3">
-            </audio>
-        </div>
+<!--        <p class="custom-food-game-container-item">Kaynaklarda şöyle sesler var:</p>-->
+<!--        <div class="custom-food-game-container-sound">-->
+<!--            <Play id="play-icon" class="text-primary"/>-->
+<!--            <audio controls controlsList="noplaybackrate" type="audio/mp3">-->
+<!--            </audio>-->
+<!--        </div>-->
         <p class="custom-food-game-container-item">Sizde puanlayın</p>
         <custom-button @click="modalOpen" class="custom-food-game-container-vote-button">Sizde puan verin</custom-button>
         <div v-show="showModal" @click="modalClose" class="platform-detay-modal"></div>

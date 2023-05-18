@@ -14,7 +14,7 @@ import Container from "~/components/common/Container.vue"
 import MobileFooter from "~/components/app/MobileFooter.vue";
 import MobileHeader from "~/components/app/Header/MobileHeader.vue";
 useHead({
-  title: 'Hisbe',
+  title: 'Movee',
 })
 </script>
 
