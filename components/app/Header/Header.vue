@@ -2,7 +2,6 @@
   <header class="header">
     <container class="header-container">
       <nuxt-link to="/" class="w-1/5">
-        <Hisbe class="hidden lg:flex"/>
       </nuxt-link>
       <div class="header-container-searchbar" >
         <search @click="focus" class="header-container-searchbar-search-icon"/>
