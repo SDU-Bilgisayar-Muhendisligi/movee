@@ -1,0 +1,15 @@
+<template>
+    <svg width="75" height="56" viewBox="0 0 75 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="8" width="59" height="40" rx="20" fill="#4E4BDF"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M39 20H37V27H30V29H37V36H39V29H46V27H39V20Z" fill="white"/>
+    </svg>
+</template>
+
+<script setup>
+
+</script>
+
+
+<style scoped>
+
+</style>

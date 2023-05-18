@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "nuxt": "^3.4.3"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "swiper": "^9.2.4",
+    "vite-svg-loader": "^4.0.0",
+    "vue3-m-circle-progress-bar": "^0.6.0"
+  }
+}
