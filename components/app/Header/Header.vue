@@ -16,7 +16,6 @@
 </template>
 
 <script setup>
-import Hisbe from 'assets/hisbe.svg'
 import Search from 'assets/search.svg'
 import Container from "~/components/common/Container.vue";
 import HeaderSuggestion from "~/components/app/Header/HeaderSuggestion.vue";
