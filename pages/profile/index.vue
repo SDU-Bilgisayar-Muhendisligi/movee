@@ -18,20 +18,17 @@
                  class="profil-card-content-select-img">
             </div>
           </div>
-
+        </div>
+        <div class="profile-my-profile">
+          <p class="profile-my-name">Movee</p>
+          <p class="profile-my-email">hi@movee.one</p>
         </div>
       </div>
     </div>
   </base-card>
 </template>
 
-<!--            <div class="profile-my-profile">-->
-<!--                <div class="profile-my-photo">-->
 
-<!--                </div>-->
-<!--                <p class="profile-my-name">Enes Aktaş</p>-->
-<!--                <p class="profile-my-email">hi@enes.one</p>-->
-<!--            </div>-->
 <script setup>
 import BaseCard from "~/components/cards/BaseCard.vue";
 import ProfileSideBar from "~/components/app/Sidebar/ProfileSideBar.vue";
@@ -94,7 +91,7 @@ const previewImage = (event) => {
 
 .profile-my-profile {
   @apply
-  flex flex-col items-center w-full py-6
+  flex flex-col items-center w-full
 }
 
 .profile-my-photo {
@@ -115,9 +112,9 @@ const previewImage = (event) => {
 
 .profil-card-container {
   @apply
-  flex flex-col sm:flex-row relative
-  items-center sm:gap-20
-  mt-8 w-full justify-center
+  flex flex-col relative
+   items-center
+  mt-3 w-full justify-start
 }
 
 .profil-card-content {
