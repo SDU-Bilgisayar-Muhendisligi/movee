@@ -3,7 +3,7 @@
         <div class="custom-profile-answered-card" v-for="cevaplanan in cevaplananlar" :key="cevaplanan.id">
             <div class="custom-profile-answered-card-container"
                  style="filter: drop-shadow(0 1px rgba(16, 24, 40, 0.05));">
-                <nuxt-link :to="`/arama/${cevaplanan.slug}`" class="custom-profile-answered-card-baslik">
+                <nuxt-link :to="`/platform/${cevaplanan.slug}`" class="custom-profile-answered-card-baslik">
                     {{ cevaplanan.baslik }}
                 </nuxt-link>
                 <p class="custom-profile-answered-card-tarih">{{ cevaplanan.tarih }} • <span>Cevaplandı</span>
