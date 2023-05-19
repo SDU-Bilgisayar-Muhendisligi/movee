@@ -35,16 +35,14 @@
                     </div>
                     <close @click="modalClose" class="cursor-pointer"/>
                 </div>
-                <div class="pb-4 px-4">
-                    <custom-vote-cevaplananlar :cevaplanan="cevaplanan" gorunum="yan-yana" class="w-full mt-2"/>
-                    <p class="flex justify-start text-gray-yediyuz font-semibold text-lg w-full mt-2">Sizde puan
+                    <custom-vote-cevaplananlar :cevaplanan="cevaplanan" gorunum="yan-yana" class="w-11/12 lg:w-full mt-2"/>
+                    <p class="flex justify-start text-gray-yediyuz font-semibold text-lg w-11/12 lg:w-full mt-2">Sizde puan
                         verin</p>
-                    <p class="flex justify-start text-gray-besyuz font-normal text-sm w-full mt-2">Bu başlığı kendi
+                    <p class="flex justify-start text-gray-besyuz font-normal text-sm w-11/12 lg:w-full mt-2">Bu başlığı kendi
                         deneyim veya fikirlerinize göre puanlayıp diğer kullanıcılara yardımcı olun.</p>
                     <custom-progress-bar-vote/>
-                    <custom-button @click="showButton = !showButton"  v-show="!showButton" class="w-full mt-16">Puanla</custom-button>
-                    <custom-button v-show="showButton" @click="showButton = !showButton"  class="w-full mt-16" bg-color="bg-green-text-white">Teşekkürler</custom-button>
-                </div>
+                    <custom-button @click="showButton = !showButton"  v-show="!showButton" class="w-11/12 lg:w-full mt-16 mb-3">Puanla</custom-button>
+                    <custom-button v-show="showButton" @click="showButton = !showButton"  class="w-11/12 lg:w-full mt-16 mb-3" bg-color="bg-green-text-white">Teşekkürler</custom-button>
             </div>
         </div>
     </div>

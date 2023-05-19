@@ -25,8 +25,8 @@
                     </div>
                     <close @click="modalClose" class="cursor-pointer"/>
                 </div>
-                <div class="pb-4 px-4 w-full">
-                    <custom-vote-merak-edilen :merak-edilen="merakEdilen" gorunum="yan-yana" class="w-full"/>
+
+                    <custom-vote-merak-edilen :merak-edilen="merakEdilen" gorunum="yan-yana" class="w-11/12 lg:w-full mt-2"/>
                     <p class="arama-baslik-container-puan-ver">Sizde puan verin</p>
                     <p class="arama-baslik-container-destek">Bu başlığı kendi deneyim veya fikirlerinize göre
                         puanlayıp diğer kullanıcılara yardımcı olun.</p>
@@ -37,7 +37,7 @@
                     <custom-button v-show="showButton" @click="showButton = !showButton" class="tesekkürler-button"
                                    bg-color="bg-green-text-white">Teşekkürler
                     </custom-button>
-                </div>
+
             </div>
         </div>
         <custom-geri-tusu/>
@@ -168,7 +168,7 @@ const modalClose = () => {
     flex justify-start
     text-gray-yediyuz
     font-semibold
-    text-lg w-full
+    text-lg w-11/12 lg:w-full
 }
 
 .arama-baslik-container-destek {
@@ -176,17 +176,17 @@ const modalClose = () => {
     flex justify-start
     text-gray-besyuz
     font-normal
-    text-sm w-full mt-2
+    text-sm w-11/12 lg:w-full mt-2
 }
 
 .puanla-button {
     @apply
-    w-full mt-16
+    w-11/12 lg:w-full mt-16 mb-3
 }
 
 .tesekkürler-button {
     @apply
-    w-full mt-16
+    w-11/12 lg:w-full mt-16 mb-3
 }
 
 .image {
