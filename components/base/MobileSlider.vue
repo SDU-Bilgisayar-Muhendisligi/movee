@@ -11,7 +11,7 @@
             <div class="swiper-slide-content">
                 <img class="image" src="/bg-slider.png" alt="">
                 <img :src="merakEdilen.img" :alt="merakEdilen.img">
-                <nuxt-link :to="`/arama/${merakEdilen.slug}`" class="icerik-mobile-slider-title">{{ merakEdilen.baslik }}</nuxt-link>
+                <nuxt-link :to="`/platform/${merakEdilen.slug}`" class="icerik-mobile-slider-title">{{ merakEdilen.baslik }}</nuxt-link>
                 <p class="text-gray-besyuz font-normal text-xs">{{ merakEdilen.icerik }}</p>
                 <slider-vote-merak-edilen :merakEdilen="merakEdilen" gorunum="ust-uste"/>
             </div>
