@@ -7,8 +7,8 @@
                     <custom-geri-tusu class="!top-10 !left-5"/>
                     <p class="mt-9 flex lg:hidden w-full justify-center text-gray-yediyuz font-normal text-base">Profil
                         Bilgilerim</p>
-                    <custom-form-input label="Adınız soyadınız" placeholder="Enes Aktaş"/>
-                    <custom-form-input label="E-posta" placeholder="hi@enes.one"/>
+                    <custom-form-input label="Adınız soyadınız" placeholder="Movee"/>
+                    <custom-form-input label="E-posta" placeholder="hi@movee.one"/>
                 </div>
             </div>
         </div>
