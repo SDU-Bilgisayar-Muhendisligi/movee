@@ -81,7 +81,7 @@ const togglePasswordVisibility = () => {
 
 .custom-input-container {
   @apply
-  flex items-center border border-gray-ucyuz rounded-lg p-2
+  flex items-center border bg-white border-gray-ucyuz rounded-lg p-2
 }
 
 .custom-input label {

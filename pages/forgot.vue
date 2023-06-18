@@ -1,7 +1,7 @@
 <template>
     <base-card height-v-h="h-screen" padding-size="py-8 pb-40">
         <div class="forgot">
-            <hisbe-logo class="hidden lg:flex"/>
+            <hisbe-logo class="flex mb-10"/>
             <custom-geri-tusu class="self-start !top-10 !left-5"/>
             <p class="forgot-text">Şifremi unuttum</p>
             <p class="login-incentive hidden lg:flex">Hatırladınız mı?
@@ -9,8 +9,8 @@
             </p>
             <div class="grow w-full flex flex-col items-center justify-end">
                 <custom-form-input   v-model:value="inputForm.email" class="forgot-custom-form" placeholder="E-posta adresiniz" label="E-posta" type="email"/>
-              <span v-for="error in rules.email.$errors" class="text-error">Geçerli bir e-posta girin.</span>
-                <nuxt-link @click="reset_password" class="w-full flex justify-center">
+              <span v-for="error in rules.email.$errors" class="error">Geçerli bir e-posta girin.</span>
+                <nuxt-link to="/new-password" @click="reset_password" class="w-full flex justify-center">
                     <custom-button class="forgot-custom-button">Şifremi sıfırla</custom-button>
                 </nuxt-link>
             </div>
@@ -83,6 +83,12 @@ const postForgot = async () => {
 </script>
 
 <style scoped>
+
+.error{
+  @apply
+  text-error text-start flex w-full lg:w-10/12
+}
+
 .forgot {
     @apply
     flex flex-col justify-between

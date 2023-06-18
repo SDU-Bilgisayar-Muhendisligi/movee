@@ -10,10 +10,10 @@
       <div class="grow w-full flex flex-col items-center justify-end">
         <custom-form-input type="password" class="new-password-custom-form" label="Yeni Şifreniz" placeholder="Şifreniz"
                            v-model:value="inputForm.password"/>
-        <span v-for="error in rules.password.$errors" class="text-error">{{error.$message}}</span>
+        <span v-for="error in rules.password.$errors" class="error">{{error.$message}}</span>
         <custom-form-input class="new-password-custom-form" label="Yeni Şifreniz (tekrar)" placeholder="Şifreniz"
                            type="password" v-model:value="inputForm.password_confirmation"/>
-        <span v-for="error in rules.password_confirmation.$errors" class="text-error">{{error.$message}}</span>
+        <span v-for="error in rules.password_confirmation.$errors" class="error">{{error.$message}}</span>
         <custom-button @click="new_password" class="new-password-custom-button">Şifremi sıfırla</custom-button>
       </div>
     </div>
@@ -111,5 +111,10 @@ const postNewPassword = async (data) => {
   @apply
   text-gray-besyuz font-normal
   text-sm mt-2 hidden lg:flex
+}
+
+.error {
+  @apply
+  text-error text-start flex w-full lg:w-10/12
 }
 </style>

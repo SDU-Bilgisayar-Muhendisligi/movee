@@ -4,7 +4,7 @@
     <Header class="!hidden lg:!flex"/>
     <container class="container-main">
       <SideBar/>
-      <!--    <div class="blur absolute w-full"></div>-->
+          <div class="blur absolute w-full"></div>
       <slot/>
     </container>
     <MobileFooter/>
@@ -32,7 +32,7 @@ useHead({
 .container-layout {
   @apply
   flex flex-col justify-between
-  lg:justify-start min-h-screen bg-gray-elli
+  lg:justify-start min-h-screen bg-none lg:bg-gray-elli
 }
 
 .container-main {

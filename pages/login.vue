@@ -7,9 +7,9 @@
         <nuxt-link to="/signup" class="login-sign-up">Kaydolun</nuxt-link>
       </p>
       <custom-form-input class="login-custom-form" v-model:value="inputForm.email" label="E-posta" type="email" placeholder="E-posta adresiniz"/>
-      <span v-for="error in rules.email.$errors" class="text-error">{{error.$message}}</span>
+      <span v-for="error in rules.email.$errors" class="error">{{error.$message}}</span>
       <custom-form-input class="login-custom-form" v-model:value="inputForm.password" label="Şifre" type="password" placeholder="Şifre Gir"/>
-      <span v-for="error in rules.password.$errors" class="text-error">{{error.$message}}</span>
+      <span v-for="error in rules.password.$errors" class="error">{{error.$message}}</span>
       <nuxt-link class="login-button" @click="login">
         <custom-button class="login-custom-button" @click="postLogin">Giriş Yap</custom-button>
       </nuxt-link>
@@ -89,6 +89,11 @@ const postLogin = async () => {
 
 
 <style scoped>
+
+.error{
+  @apply
+  text-error text-start flex w-full lg:w-10/12
+}
 
 .login {
   @apply

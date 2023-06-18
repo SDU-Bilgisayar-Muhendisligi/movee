@@ -8,14 +8,13 @@
       </p>
       <custom-form-input class="signup-custom-form" v-model:value="inputForm.name" label="Adınız soyadınız" type="text"
                          placeholder="Adınız soyadınız"/>
-      <span v-for="error in rules.name.$errors" class="text-error">{{ error.$message }}</span>
+      <span v-for="error in rules.name.$errors" class="error">{{ error.$message }}</span>
       <custom-form-input class="signup-custom-form" v-model:value="inputForm.email" label="E-mail"
                          placeholder="E-posta adresiniz" type="email"/>
-      <span v-for="error in rules.email.$errors" class="text-error">{{ error.$message }}</span>
+      <span v-for="error in rules.email.$errors" class="error">{{ error.$message }}</span>
       <custom-form-input class="signup-custom-form" v-model:value="inputForm.password" label="Şifreniz"
                          placeholder="Şifreniz"/>
-      <span v-for="error in rules.password.$errors" class="text-error">{{ error.$message }}</span>
-      type="password"/>
+      <span v-for="error in rules.password.$errors" class="error">{{ error.$message }}</span>
       <custom-button @click="signup" class="signup-custom-button">Kaydol</custom-button>
     </div>
   </base-card>
@@ -110,5 +109,9 @@ const postSignUp = async (data) => {
 .signup-custom-button {
   @apply
   w-full lg:w-10/12 mt-6
+}
+.error {
+  @apply
+  text-error w-full lg:w-10/12 flex text-start
 }
 </style>
