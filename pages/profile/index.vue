@@ -4,86 +4,73 @@
       <profile-side-bar/>
       <div class="profil-card-container">
         <div>
-          <div class="profil-card-content relative">
-            <label for="input" class="profil-card-img-icon z-10">
-              <input id="input" type="file" class="hidden"
-                     @change="previewImage($event)">
-              <default-p-p class="absolute"/>
-            </label>
-            <img id="preview-selected-image" class="profil-card-img object-cover" alt="image"/>
-            <span class="profil-card-img-remove">
-                          <trash @click="removePhoto"/>
-                        </span>
-            <div id="defaultProfilImg"
-                 class="profil-card-content-select-img">
-            </div>
+         <photo-upload/>
+          <div class="profile-my-profile">
+            <p class="profile-my-name">Enes Aktaş</p>
+            <p class="profile-my-email">hi@enes.one</p>
           </div>
-        </div>
-        <div class="profile-my-profile">
-          <p class="profile-my-name">Movee</p>
-          <p class="profile-my-email">hi@movee.one</p>
         </div>
       </div>
     </div>
   </base-card>
 </template>
-
-
 <script setup>
 import BaseCard from "~/components/cards/BaseCard.vue";
 import ProfileSideBar from "~/components/app/Sidebar/ProfileSideBar.vue";
-import DefaultPP from "~/components/common/DefaultPP.vue";
-import BackgrounImage from "~/components/common/BackgrounImage.vue";
-import Trash from "~/components/common/Trash.vue";
+import PhotoUpload from "~/components/base/PhotoUpload.vue";
 
 definePageMeta({
-  layout: "temiz"
+  layout: "background"
 })
 
-function removePhoto() {
-  const imagePreviewElement = document.querySelector('#preview-selected-image')
-  profil.value = document.querySelector('.profil-card-img')
-  const removeButton = document.querySelector('.profil-card-img-remove')
-  imagePreviewElement.src = ''
-  if (imagePreviewElement.src === '') {
-    imagePreviewElement.classList.add('hidden')
-  }
-  imagePreviewElement.style.display = 'block'
-  removeButton.classList.remove('!flex')
-  imagePreviewElement.classList.remove('z-50')
-  const headerImage = document.querySelector('.headerImage')
-  headerImage.src = ''
-  if (headerImage.src === '') {
-    headerImage.classList.add('hidden')
-  }
-  headerImage.style.display = 'block'
-  document.getElementById('defaultProfilImg').style.display = 'flex'
-  document.getElementById('defaultProfilImgHeader').style.display = 'flex'
+
+function inpute() {
+  previewImage()
 }
+
+// function removePhoto() {
+//   const imagePreviewElement = document.querySelector('#preview-selected-image')
+//   profil.value = document.querySelector('.profil-card-img')
+//   const removeButton = document.querySelector('.profil-card-img-remove')
+//   imagePreviewElement.src = ''
+//   if (imagePreviewElement.src === '') {
+//     imagePreviewElement.classList.add('hidden')
+//   }
+//   imagePreviewElement.style.display = 'block'
+//   removeButton.classList.remove('!flex')
+//   imagePreviewElement.classList.remove('z-50')
+//   document.getElementById('defaultProfilImg').style.display = 'flex'
+// }
 
 const image = ref(null)
 const file = ref(null)
 const profil = ref()
 
 const previewImage = (event) => {
-  const imageFiles = event.target.files
-  const imageSrc = URL.createObjectURL(imageFiles[0])
+  const imageFiles = event.target.files[0]
+  const imageSrc = URL.createObjectURL(imageFiles)
   const removeButton = document.querySelector('.profil-card-img-remove')
   const imagePreviewElement = document.querySelector('#preview-selected-image')
-  const headerImage = document.querySelector('.headerImage')
   imagePreviewElement.classList.add('z-50')
 
   removeButton.classList.add('!flex')
   imagePreviewElement.src = imageSrc
-  imagePreviewElement.style.display = 'block'
-  headerImage.src = imageSrc
-  headerImage.style.display = 'block'
+  imagePreviewElement.style.display = 'flex'
   document.getElementById('defaultProfilImg').style.display = 'none'
-  document.getElementById('defaultProfilImgHeader').style.display = 'none'
 }
 </script>
 
 <style scoped>
+
+
+.masked-email {
+  /* Hide the bullets in password input */
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+  text-security: disc;
+}
+
+
 .profile-container {
   @apply
   flex flex-col-reverse lg:flex-row justify-between w-full
@@ -112,16 +99,16 @@ const previewImage = (event) => {
 
 .profil-card-container {
   @apply
-  flex flex-col relative
-   items-center
-  mt-3 w-full justify-start
+  flex flex-col sm:flex-row relative
+  items-center lg:items-start sm:gap-20
+  mt-8 w-full justify-center
 }
 
 .profil-card-content {
   @apply
   relative w-20 h-20 lg:w-32 lg:h-32
   flex flex-col
-  items-center justify-center
+  items-center  justify-center
 }
 
 .profil-card-img {
@@ -136,25 +123,48 @@ const previewImage = (event) => {
   @apply
   absolute w-6 h-6 right-0 bottom-0 hidden
   flex-col justify-center items-center
-  bg-white rounded-full z-50
+  bg-white rounded-full z-50 lg:border border-gray-ikiyuz
 }
+
 
 .profil-card-img-icon {
   @apply
-  w-8 h-8 bg-white
+  w-8 h-8
   rounded-full absolute
   flex items-center justify-center
-  border border-gray
+  border border-gray cursor-pointer
   shadow  shadow-white
+}
+
+.profil-card-img-icon:before {
+  content: '';
+  @apply
+  absolute  w-full bg-site-success z-50
 }
 
 
 .profil-card-content-select-img {
   @apply
   w-full h-full border border-gray-ikiyuz
-  bg-white absolute top-0 left-0
+  bg-white absolute top-0 left-0 text-4xl
   rounded-full flex items-center justify-center
-  text-4xl
+}
+
+.profil-card-button-input {
+  @apply
+  w-20 h-20 lg:w-32 lg:h-32
+  cursor-pointer rounded-full
+  absolute border border-gray-ikiyuz
+}
+
+input::-webkit-file-upload-button {
+  @apply
+  hidden
+}
+
+input {
+  @apply
+  text-white
 }
 
 .profil-card-content-delete-img {

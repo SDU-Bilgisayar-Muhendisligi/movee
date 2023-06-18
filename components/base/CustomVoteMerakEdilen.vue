@@ -1,16 +1,14 @@
 <template>
     <div class="custom-vote" :class="gorunum">
         <div class="custom-vote-hisbe">
-            <custom-progress-bar-hisbe class="circle-progress__svg" :voteHisbe="merakEdilen.voteHisbe"
-                                       :max="merakEdilen.max"/>
+            <custom-progress-bar-hisbe   :voteHisbe="merakEdilen.voteHisbe"/>
             <div class="custom-vote-hisbe-detay">
-                <p class="custom-vote-hisbe-detay-title">Movee:</p>
+                <p class="custom-vote-hisbe-detay-title">Hisbe:</p>
                 <p class="custom-vote-hisbe-detay-status">{{ merakEdilen.hisbe }}</p>
             </div>
         </div>
         <div class="custom-vote-kullanici">
-            <custom-progress-bar-user class="circle-progress__svg" :voteUser="merakEdilen.voteUser"
-                                      :max="merakEdilen.max"/>
+            <custom-progress-bar-user  :voteUser="merakEdilen.voteUser"/>
             <div class="custom-vote-kullanici-detay">
                 <p class="custom-vote-kullanici-detay-title">Kullanıcılar</p>
                 <p class="custom-vote-kullanici-detay-status">{{ merakEdilen.kullanicilar }}</p>
@@ -23,6 +21,7 @@
 
 import CustomProgressBarHisbe from "~/components/base/CustomProgressBarHisbe.vue";
 import CustomProgressBarUser from "~/components/base/CustomProgressBarUser.vue";
+import DenemeCircular from "~/components/base/DenemeCircular.vue";
 
 const props = defineProps({
     merakEdilen: Object,

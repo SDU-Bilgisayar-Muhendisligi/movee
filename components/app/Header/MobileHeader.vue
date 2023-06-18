@@ -2,13 +2,14 @@
   <header class="header">
     <container class="header-container">
       <nuxt-link to="/" class="w-1/5">
-        <img src="/movee.png" class="hidden lg:flex"  alt="">
+        <Hisbe class="hidden lg:flex"/>
       </nuxt-link>
       <div class="header-container-searchbar">
         <search @click="focus" class="header-container-searchbar-search-icon"/>
-        <input id="input-text" @click="focus" type="text" @keyup.enter="handleEnter" v-model="searchText" class="header-container-searchbar-input"
+        <input id="input-text" @click="focus" type="text" v-model="searchText" @keyup.enter="handleEnter"
+               class="header-container-searchbar-input"
                placeholder="Marka, ürün, servis ara...">
-        <cross v-show="showModalSuggestion" @click="ignore"  class="header-container-cross-icon"/>
+        <cross v-show="showModalSuggestion" @click="ignore" class="header-container-cross-icon"/>
         <header-suggestion v-show="showModalSuggestion"/>
       </div>
     </container>
@@ -17,21 +18,44 @@
 </template>
 
 <script setup>
+import Hisbe from '~/assets/hisbe.svg'
 import Search from '~/assets/search.svg'
 import Container from "~/components/common/Container.vue";
 import HeaderSuggestion from "~/components/app/Header/HeaderSuggestion.vue";
 import Cross from "~/components/common/Cross.vue";
+import Swal from "sweetalert2";
 
 const route = useRoute()
 const showModalSuggestion = ref(false)
 
-const router = useRouter();
+let router = useRouter();
 
 let searchText = ref('');
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+let slug = route.params.slug
 const handleEnter = () => {
   router.push(`/arama/${searchText.value}`);
 };
+
+
+// const searchTrick = computed(() => {
+//   searchText.value = slug.find(item => {
+//     return item
+//   })
+//   return searchText.value
+// })
+
 
 watch(() => route.path,
     () => {
@@ -49,7 +73,11 @@ const focus = () => {
 }
 
 const ignore = () => {
-  showModalSuggestion.value = false
+  if (route.path == '/arama') {
+    showModalSuggestion.value = true
+  } else {
+    showModalSuggestion.value = false
+  }
   const element = document.querySelector('body')
   const input = document.getElementById("input-text")
   searchText.value = input.value
@@ -84,11 +112,6 @@ const ignore = () => {
 .header-container-searchbar-search-icon {
   @apply
   text-gray-dark
-}
-
-img{
-  @apply
-  w-[100px]
 }
 
 .header-container-searchbar-input {

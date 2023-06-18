@@ -22,10 +22,6 @@ definePageMeta({
   layout: "temiz",
 });
 
-
-
-
-
 const cevaplananlar = ref([
   {
     id: 1,
@@ -115,22 +111,17 @@ const merakEdilen = ref()
 const cevaplanan = ref()
 const route = useRoute()
 
-
 for (let i = 0; i < cevaplananlar.value.length; i++) {
   if (cevaplananlar.value[i].slug == route.params.slug) {
     cevaplanan.value = cevaplananlar.value[i]
   }
 }
 
-
 for (let i = 0; i < merakEdilenler.value.length; i++) {
   if (merakEdilenler.value[i].slug == route.params.slug) {
     merakEdilen.value = merakEdilenler.value[i]
   }
 }
-
-
-
 
 </script>
 

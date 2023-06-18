@@ -1,15 +1,15 @@
 <template>
     <div class="custom-vote">
         <div class="custom-vote-hisbe">
-            <custom-progress-bar-hisbe class="circle-progress__svg" :voteHisbe="merakEdilen.voteHisbe"
+            <custom-progress-bar-hisbe  :voteHisbe="merakEdilen.voteHisbe"
                                        :max="merakEdilen.max"/>
             <div class="custom-vote-hisbe-detay">
-                <p class="custom-vote-hisbe-detay-title">Movee:</p>
+                <p class="custom-vote-hisbe-detay-title">Hisbe:</p>
                 <p class="custom-vote-hisbe-detay-status">{{ merakEdilen.hisbe }}</p>
             </div>
         </div>
         <div class="custom-vote-kullanici">
-            <custom-progress-bar-user class="circle-progress__svg" :voteUser="merakEdilen.voteUser"
+            <custom-progress-bar-user :voteUser="merakEdilen.voteUser"
                                       :max="merakEdilen.max"/>
             <div class="custom-vote-kullanici-detay">
                 <p class="custom-vote-kullanici-detay-title">Kullanıcılar</p>
@@ -21,11 +21,10 @@
 </template>
 
 <script setup>
-
 import CustomProgressBarHisbe from "~/components/base/CustomProgressBarHisbe.vue";
 import CustomProgressBarUser from "~/components/base/CustomProgressBarUser.vue";
 
-const props = defineProps({
+ defineProps({
     merakEdilen: Object,
 })
 

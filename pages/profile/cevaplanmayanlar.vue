@@ -16,9 +16,22 @@ import CustomBar from "~/components/base/CustomBar.vue";
 import CustomCevap from "~/components/base/CustomCevap.vue";
 import CustomProfileUnAnswered from "~/components/base/CustomProfileUnAnswered.vue";
 import BackgrounImage from "~/components/common/BackgrounImage.vue";
+import Swal from "sweetalert2";
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 definePageMeta({
-    layout: "temiz"
+    layout: "background"
 })
 const cevaplanmayanlar = ref([
     {
@@ -76,13 +89,44 @@ for (let i = 0; i < cevaplanmayanlar.value.length; i++) {
     }
 }
 
+const getCevaplanmayan = async () => {
+    await $fetch('/api/cevaplanmayanlar', {
+        method: 'GET',
+        body: cevaplanmayan.value,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(async res => {
+        if (res.error.value) {
+            Toast.fire("Hata!", "Tekrar Deneyiniz", "error");
+            return
+        }
+        cevaplanmayan.value = res.data.value
+    })
+}
+
+
+//
+// const { data: count } = await useFetch('/api/count',{
+//      method:'GET',
+//      body:cevaplanmayan.value,
+//       headers: {
+//           'Content-Type': 'application/json'
+//       }
+// }).then( async res => {
+//       if (res.error.value){
+//         Toast.fire("Hata!", "Tekrar Deneyiniz", "error");
+//         return
+//       }
+// })
+
 
 </script>
 
 <style scoped>
 .profile-container {
     @apply
-    flex flex-col-reverse lg:flex-row justify-between w-full
+    flex flex-col-reverse lg:flex-row justify-between w-full h-full
 }
 
 .wow {

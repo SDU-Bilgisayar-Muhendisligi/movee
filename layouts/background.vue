@@ -1,5 +1,5 @@
 <template>
-  <div class="container-layout">
+  <div class="container-layout" >
     <!--        <img src="/bg-slider.png" class="image" alt="">-->
     <Header class="!hidden lg:!flex"/>
     <container class="container-main">
@@ -21,11 +21,8 @@ import Header from "~/components/app/Header/Header.vue";
 useHead({
   title: 'Hisbe',
 })
-
 </script>
-
 <style scoped>
-
 
 ::-webkit-scrollbar {
   width: 0;
@@ -35,7 +32,7 @@ useHead({
 .container-layout {
   @apply
   flex flex-col justify-between
-  lg:justify-start min-h-screen
+  lg:justify-start min-h-screen bg-gray-elli
 }
 
 .container-main {

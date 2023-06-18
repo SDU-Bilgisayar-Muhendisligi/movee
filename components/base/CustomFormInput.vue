@@ -1,91 +1,114 @@
 <template>
-    <form action="" class="custom-form">
-        <label for="" class="custom-form-label" :label="label">{{ label }}</label>
-        <div class="custom-form-input-container">
-            <input :type="typeBool" class="custom-form-input"
-                   :placeholder="placeholder" required>
-                <eye v-if="password" v-show="!eyeShow" @click="show"
-                     class="custom-form-eye"/>
-                <blind-eye v-show="eyeShow" @click="show"
-                           class="custom-form-blind-eye"/>
-        </div>
-    </form>
+  <div class="custom-input">
+    <label :for="id">{{ label }}</label>
+    <div class="custom-input-container" @click="focus">
+      <input
+          :type="showPassword ? 'text' : type"
+          :id="id"
+          :disabled="disabled"
+          :placeholder="placeholder"
+          @input="handleInput"
+          @blur="handleBlur"
+      />
+      <span v-if="type === 'password'" v-show="!showPassword" class="toggle-password" @click="togglePasswordVisibility">
+            <eye/>
+        </span>
+      <span class="toggle-password" v-if="type === 'password'" v-show="showPassword" @click="togglePasswordVisibility">
+            <blind-eye/>
+        </span>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import Eye from "~/assets/eye.svg"
-import BlindEye from "~/assets/blind-eye.svg"
 
+import Eye from '@/assets/eye.svg'
+import BlindEye from '@/assets/blind-eye.svg'
+
+const emit = defineEmits([
+  'update:value',
+])
 const props = defineProps({
-    label: {
-        type: String,
-        default: "E posta"
-    },
-    placeholder: {
-        type: String,
-        default: "E posta gir"
-    },
-    password: {
-        type: Boolean,
-        default: false
-    },
-    type: {
-        type: String,
-        default: "text"
-    }
-})
-const eyeShow = ref(false)
+  label: {
+    type: String,
+    default: '',
+  },
+  type: {
+    type: String,
+    default: 'text',
+  },
+  placeholder: {
+    type: String,
+    default: '',
+  },
 
-const show = () => {
-    eyeShow.value = !eyeShow.value
-}
-
-const typeBool = computed(() => {
-    if (eyeShow.value) {
-        return "text"
-    } else if (eyeShow.value == false && props.password) {
-        return "password"
-    } else {
-        return "email"
-    }
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 
+const error = ref(null);
+const value = ref(props.value);
+const showPassword = ref(false);
+const id = `custom-input-${Math.random().toString(36).substr(2, 9)}`;
+
+const focus = (e) => {
+  const div = e.target.closest('.custom-input-container')
+  div.querySelector('input').focus();
+  div.classList.add('!border-gray-dortyuz','!outline','!outline-3','!outline-gray-ucyuz')
+};
+const handleInput = (event) => {
+  value.value = event.target.value;
+  emit('update:value', value.value)
+};
+
+// todo: validasyon kütüphanesi ekle
+const handleBlur = (e) => {
+  const div = e.target.closest('.custom-input-container')
+  div.classList.remove('!border-gray-dortyuz','!outline','!outline-3','!outline-gray-ucyuz')
+};
+
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
 </script>
 
+<style>
+.custom-input {
+  margin-top: 10px;
+}
 
-<style scoped>
-.custom-form {
-    @apply
-    flex flex-col mt-10
+.custom-input-container {
+  @apply
+  flex items-center border border-gray-ucyuz rounded-lg p-2
+}
+
+.custom-input label {
+  display: block;
+  margin-bottom: 5px;
+  @apply
+  text-gray-yediyuz font-semibold text-sm
+}
+
+.custom-input input {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  @apply
+  focus:px-4 transition-all duration-500
 }
 
 
-
-.custom-form-label {
-    @apply
-    text-gray-yediyuz font-semibold text-sm
+.custom-input .error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.custom-form-input-container {
-    @apply
-    flex justify-between items-center
-    px-3 py-2 mt-2 border border-gray-ikiyuz
-    bg-white rounded-lg
-}
-
-.custom-form-input {
-    @apply
-    rounded-lg outline-none bg-white w-full
-}
-
-.custom-form-eye {
-    @apply
-    text-gray-besyuz
-}
-
-.custom-form-blind-eye {
-    @apply
-    text-gray-besyuz
+.toggle-password {
+ @apply
+  text-gray-dortyuz
 }
 
 </style>

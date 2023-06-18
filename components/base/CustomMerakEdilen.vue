@@ -3,7 +3,7 @@
         <div class="custom-merak-edilen">
             <img :src="merakEdilen.img" alt="">
             <div class="custom-merak-edilen-icerik">
-                <nuxt-link :to="`/platform/${merakEdilen.slug}`" class="custom-merak-edilen-icerik-title">{{ merakEdilen.baslik }}</nuxt-link>
+                <nuxt-link :to="`/cevaplananlar/${merakEdilen.slug}`" class="custom-merak-edilen-icerik-title">{{ merakEdilen.baslik }}</nuxt-link>
                 <p class="custom-merak-edilen-icerik-detay">{{ merakEdilen.icerik }}</p>
             </div>
         </div>

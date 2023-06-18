@@ -19,7 +19,7 @@ defineProps({
 .custom-button {
     @apply
     flex justify-center items-center
-    rounded-lg py-2 cursor-pointer
+    py-2 cursor-pointer rounded-xl
 }
 
 

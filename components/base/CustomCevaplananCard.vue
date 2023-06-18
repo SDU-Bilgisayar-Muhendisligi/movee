@@ -3,7 +3,7 @@
         <div class="custom-cevaplanan-card-detay">
             <img :src="cevaplanan.img" alt="">
             <div class="custom-cevaplanan-card-title">
-                <nuxt-link :to="`/platform/${cevaplanan.slug}`" class="custom-cevaplanan-card-title-baslik">
+                <nuxt-link :to="`/cevaplananlar/${cevaplanan.slug}`" class="custom-cevaplanan-card-title-baslik">
                     {{ cevaplanan.baslik }}
                 </nuxt-link>
                 <p class="custom-cevaplanan-card-title-icerik">{{ cevaplanan.icerik }}</p>

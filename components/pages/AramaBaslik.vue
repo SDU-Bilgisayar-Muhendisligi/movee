@@ -3,7 +3,7 @@
         <div class="flex items-center">
             <img :src="merakEdilen.img" :alt="merakEdilen.img" class="w-[40px]">
             <div class="arama-baslik-container-detay">
-                <nuxt-link :to="`/platform/${merakEdilen.slug}`" class="arama-baslik-container-detay-baslik">{{ merakEdilen.baslik }}</nuxt-link>
+                <nuxt-link :to="`/cevaplananlar/${merakEdilen.slug}`" class="arama-baslik-container-detay-baslik">{{ merakEdilen.baslik }}</nuxt-link>
                 <p class="arama-baslik-container-detay-icerik">{{ merakEdilen.icerik }}</p>
             </div>
         </div>

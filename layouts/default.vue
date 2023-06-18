@@ -16,17 +16,15 @@ import MobileFooter from "~/components/app/MobileFooter.vue";
 
 
 useHead({
-  title: 'Movee',
+  title: 'Hisbe',
 })
 
 </script>
 
 <style scoped>
-
-
 .container-main {
   @apply
-  lg:container lg:mx-auto grow lg:flex mt-4 lg:mt-10
+  lg:container lg:mx-auto grow lg:flex mt-4 lg:mt-10 mb-10  lg:mb-40
 }
 
 .container-layout::-webkit-scrollbar {
@@ -39,6 +37,4 @@ useHead({
   flex flex-col justify-between
   lg:justify-start min-h-screen
 }
-
-
 </style>

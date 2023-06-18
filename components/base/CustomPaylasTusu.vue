@@ -12,25 +12,11 @@ defineProps({
     }
 })
 
-
-// const handleShare = () => {
-//     if (!navigator.share) {
-//         navigator.share({
-//             title: 'Başlık',
-//             text: 'Paylaşmak istediğiniz metin',
-//             url: `${window.location.href}`,
-//         })
-//             .then(() => console.log('Paylaşıldı'))
-//             .catch((error) => console.error('Paylaşım hatası:', error));
-//     } else {
-//         console.log(window.location.href)
-//     }
-// };
 </script>
 <style scoped>
 .paylas-tusu {
     @apply
-    absolute -top-2 right-0 z-50  lg:hidden
+    absolute top-0 lg:top-10 right-0 lg:right-5   z-50  lg:hidden
 }
 
 .color-white{

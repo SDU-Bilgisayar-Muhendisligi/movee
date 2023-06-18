@@ -103,13 +103,13 @@ const haberler = ref([
 ])
 
 definePageMeta({
-    layout: "mobile"
+  layout:'mobile'
 })
 </script>
 
 <style scoped>
 .haberler-container {
     @apply
-    flex flex-col gap-4 grow lg:w-10/12 xl:w-3/4  lg:mt-0
+    flex flex-col gap-4 grow lg:w-10/12 xl:w-3/4
 }
 </style>

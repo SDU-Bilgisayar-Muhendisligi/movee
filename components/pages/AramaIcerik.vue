@@ -3,7 +3,7 @@
         <div class="wow">
             <img :src="cevaplanan.img" :alt="cevaplanan.img" class="w-[40px]">
             <div class="arama-icerik-container-detay">
-                <nuxt-link :to="`/platform/${cevaplanan.slug}`" class="arama-icerik-container-detay-baslik">
+                <nuxt-link :to="`/cevaplananlar/${cevaplanan.slug}`" class="arama-icerik-container-detay-baslik">
                     {{ cevaplanan.baslik }}
                 </nuxt-link>
                 <p class="arama-icerik-container-detay-icerik">{{ cevaplanan.icerik }}</p>

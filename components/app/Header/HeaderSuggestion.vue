@@ -1,18 +1,20 @@
 <template>
   <div class="header-container-suggestion">
     <p class="text-gray-yediyuz font-semibold test-base mt-4 lg:mt-0">En Çok Aranılanlar</p>
-    <p class="header-container-suggestion-item">Disney Plus <span class="header-container-suggestion-arrow"><arrow/></span>
-    </p>
-    <p class="header-container-suggestion-item">
-      Call of Duty Warzone <span class="header-container-suggestion-arrow"><arrow/></span></p>
-    <p class="header-container-suggestion-item">
-      Kafalar <span class="header-container-suggestion-arrow"><arrow/></span></p>
-    <p class="header-container-suggestion-item">
-      Disney Plus <span class="header-container-suggestion-arrow"><arrow/></span></p>
-    <p class="header-container-suggestion-item">
-      Orkun Işıtmak <span class="header-container-suggestion-arrow"><arrow/></span></p>
-    <p class="flex items-center w-full text-gray-dark font-normal text-sm py-2 cursor-pointer">Tumblr<span
-        class="header-container-suggestion-arrow "><arrow/></span></p>
+    <nuxt-link to="/arama/disney-plus" class="header-container-suggestion-item">Disney Plus <span
+        class="header-container-suggestion-arrow"><arrow/></span>
+    </nuxt-link>
+    <nuxt-link to="/arama/call-of-duty-warzone" class="header-container-suggestion-item">
+      Call of Duty Warzone <span class="header-container-suggestion-arrow"><arrow/></span></nuxt-link>
+    <nuxt-link to="/arama/kafalar" class="header-container-suggestion-item">
+      Kafalar <span class="header-container-suggestion-arrow"><arrow/></span></nuxt-link>
+    <nuxt-link to="/arama/disney-plus" class="header-container-suggestion-item">
+      Disney Plus <span class="header-container-suggestion-arrow"><arrow/></span></nuxt-link>
+    <nuxt-link to="/arama/orkus-isitmak" class="header-container-suggestion-item">
+      Orkun Işıtmak <span class="header-container-suggestion-arrow"><arrow/></span></nuxt-link>
+    <nuxt-link to="/arama/tumblr"
+               class="flex items-center w-full text-gray-dark font-normal text-sm py-2 cursor-pointer">Tumblr<span
+        class="header-container-suggestion-arrow "><arrow/></span></nuxt-link>
   </div>
 </template>
 <script setup>

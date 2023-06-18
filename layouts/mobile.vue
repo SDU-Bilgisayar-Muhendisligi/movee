@@ -1,6 +1,6 @@
 <template>
     <div class="container-layout">
-            <MobileHeader/>
+      <Header  class="!hidden lg:!flex"/>
         <main class="container-main">
             <SideBar/>
             <slot/>
@@ -13,8 +13,9 @@ import SideBar from "~/components/app/Sidebar/SideBar.vue";
 import Container from "~/components/common/Container.vue"
 import MobileFooter from "~/components/app/MobileFooter.vue";
 import MobileHeader from "~/components/app/Header/MobileHeader.vue";
+import Header from "~/components/app/Header/Header.vue";
 useHead({
-  title: 'Movee',
+  title: 'Hisbe',
 })
 </script>
 
@@ -26,7 +27,7 @@ useHead({
 
 .container-main {
     @apply
-    lg:container lg:mx-auto grow lg:flex mt-0 lg:mt-10
+    lg:container lg:mx-auto grow lg:flex mt-0 lg:mt-10 mb-10  lg:mb-40
 }
 
 .container-layout {

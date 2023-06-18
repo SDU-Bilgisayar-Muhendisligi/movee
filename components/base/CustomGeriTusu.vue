@@ -17,7 +17,7 @@ defineProps({
 <style scoped>
 .geri-tusu {
     @apply
-    absolute -top-2 left-0 z-50  lg:hidden
+    absolute top-0 lg:top-10 left-0 lg:left-5 z-50 lg:hidden
 }
 .color-white{
     @apply

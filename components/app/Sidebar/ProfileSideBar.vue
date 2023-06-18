@@ -32,16 +32,14 @@
 import BaseCard from "~/components/cards/BaseCard.vue";
 import Arrow from "~/components/common/Arrow.vue";
 
-definePageMeta({
-    layout: "temiz"
-})
+
 </script>
 
 <style scoped>
 .profile-left-side {
     @apply
     flex flex-col lg:border-r
-    lg:border-gray-yuz
+    lg:border-gray-yuz h-full
     w-full py-6 lg:px-4
 }
 

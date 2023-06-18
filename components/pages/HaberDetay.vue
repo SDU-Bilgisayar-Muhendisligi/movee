@@ -1,6 +1,6 @@
 <template>
     <div class="haber-detay-container">
-        <img :src="haber.img" :alt="haber.img">
+        <img :src="haber.img" class="lg:rounded-lg" :alt="haber.img">
        <div class="px-4">
            <p class="haber-detay-container-tarih">{{ haber.tarih }}</p>
            <p class="haber-detay-container-baslik">{{ haber.baslik }}</p>
