@@ -1,14 +1,14 @@
 <template>
     <div class="custom-vote" :class="gorunum">
         <div class="custom-vote-hisbe">
-            <custom-progress-bar-hisbe   :voteHisbe="merakEdilen.voteHisbe"/>
+            <custom-progress-bar-hisbe :max="merakEdilen.max"  :voteHisbe="merakEdilen.voteHisbe"/>
             <div class="custom-vote-hisbe-detay">
                 <p class="custom-vote-hisbe-detay-title">Hisbe:</p>
                 <p class="custom-vote-hisbe-detay-status">{{ merakEdilen.hisbe }}</p>
             </div>
         </div>
         <div class="custom-vote-kullanici">
-            <custom-progress-bar-user  :voteUser="merakEdilen.voteUser"/>
+            <custom-progress-bar-user  :max="merakEdilen.max" :voteUser="merakEdilen.voteUser"/>
             <div class="custom-vote-kullanici-detay">
                 <p class="custom-vote-kullanici-detay-title">Kullanıcılar</p>
                 <p class="custom-vote-kullanici-detay-status">{{ merakEdilen.kullanicilar }}</p>

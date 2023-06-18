@@ -19,7 +19,7 @@ import BackgrounImage from "~/components/common/BackgrounImage.vue";
 import Header from "~/components/app/Header/Header.vue";
 
 useHead({
-  title: 'Hisbe',
+  title: 'Movee',
 })
 </script>
 <style scoped>
