@@ -16,7 +16,7 @@ import MobileFooter from "~/components/app/MobileFooter.vue";
 
 
 useHead({
-  title: 'Movee',
+  title: 'Hisbe',
 })
 
 </script>
